@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,20 +12,20 @@ const Inventory = () => {
   const tataModels = vehicles.filter((v) => v.brand === "Tata");
   const mahindraModels = vehicles.filter((v) => v.brand === "Mahindra");
 
-  const BrandSection = ({ 
+  const BrandSection = ({
     id,
-    brand, 
-    models, 
-    brandColor 
-  }: { 
-    id:string,
-    brand: string; 
-    models: typeof vehicles; 
+    brand,
+    models,
+    brandColor,
+  }: {
+    id: string;
+    brand: string;
+    models: typeof vehicles;
     brandColor: string;
   }) => (
     <section id={id} className="mb-16 animate-fade-up">
       <div className="text-center mb-8">
-        <Badge 
+        <Badge
           className="mb-4 text-lg py-2 px-6"
           style={{ backgroundColor: `hsl(var(--${brandColor}))` }}
         >
@@ -45,15 +46,17 @@ const Inventory = () => {
                 <Image
                   src={vehicle.image}
                   alt={vehicle.name}
-    fill
-    priority
-    quality={95}
-    unoptimized
+                  fill
+                  priority
+                  quality={95}
+                  unoptimized
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <Badge
                   className="absolute top-4 right-4"
-                  style={{ backgroundColor: `hsl(var(--${vehicle.brandColor}))` }}
+                  style={{
+                    backgroundColor: `hsl(var(--${vehicle.brandColor}))`,
+                  }}
                 >
                   {vehicle.brand}
                 </Badge>
@@ -65,12 +68,18 @@ const Inventory = () => {
                 <div className="space-y-1 mb-4">
                   {vehicle.payload && (
                     <p className="text-sm text-muted-foreground">
-                      Payload: <span className="font-medium text-foreground">{vehicle.payload}</span>
+                      Payload:{" "}
+                      <span className="font-medium text-foreground">
+                        {vehicle.payload}
+                      </span>
                     </p>
                   )}
                   {vehicle.fuelType && (
                     <p className="text-sm text-muted-foreground">
-                      Fuel: <span className="font-medium text-foreground">{vehicle.fuelType}</span>
+                      Fuel:{" "}
+                      <span className="font-medium text-foreground">
+                        {vehicle.fuelType}
+                      </span>
                     </p>
                   )}
                 </div>
@@ -88,7 +97,6 @@ const Inventory = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      
       <main className="flex-1">
         {/* Hero Section */}
         <section className="py-16 lg:py-24 bg-linear-to-b from-muted/50 to-background">
@@ -98,7 +106,8 @@ const Inventory = () => {
                 Complete <span className="text-primary">Inventory</span>
               </h1>
               <p className="text-lg text-muted-foreground">
-                Browse our extensive collection of commercial vehicles from India's leading manufacturers
+                Browse our extensive collection of commercial vehicles from
+                India's leading manufacturers
               </p>
             </div>
           </div>
@@ -107,13 +116,27 @@ const Inventory = () => {
         {/* Inventory Sections */}
         <section className="py-12 lg:py-16">
           <div className="container mx-auto px-4">
-            <BrandSection id="eicher" brand="Eicher" models={eicherModels} brandColor="eicher" />
-            <BrandSection id="tata" brand="Tata" models={tataModels} brandColor="tata" />
-            <BrandSection id="mahindra" brand="Mahindra" models={mahindraModels} brandColor="mahindra" />
+            <BrandSection
+              id="eicher"
+              brand="Eicher"
+              models={eicherModels}
+              brandColor="eicher"
+            />
+            <BrandSection
+              id="tata"
+              brand="Tata"
+              models={tataModels}
+              brandColor="tata"
+            />
+            <BrandSection
+              id="mahindra"
+              brand="Mahindra"
+              models={mahindraModels}
+              brandColor="mahindra"
+            />
           </div>
         </section>
       </main>
-
     </div>
   );
 };

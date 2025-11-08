@@ -1,29 +1,54 @@
-import { notFound } from "next/navigation";
+"use client";
+import { useParams, useRouter } from "next/navigation";
 import VehicleDetailClient from "@/components/VehicleClientDetail";
-import { getVehicleById, getVehiclesByBrand, vehicles } from "@/data/vehicles";
+import { getVehicleById, getVehiclesByBrand } from "@/data/vehicles";
+import { useMemo } from "react";
 
-// Generate static params so all vehicle pages are prerendered at build time.
-export async function generateStaticParams() {
-  return vehicles.map((v) => ({ id: v.id }));
-}
+export default function VehicleDetailPage() {
+  const params = useParams();
+  const router = useRouter();
+  const id = params?.id as string | undefined;
 
-export default function VehicleDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const vehicle = getVehicleById(params.id);
+  const vehicle = useMemo(() => (id ? getVehicleById(id) : undefined), [id]);
 
-  if (!vehicle) {
-    // Let Next.js render the not-found page at build/runtime if id is invalid
-    notFound();
+  if (!id || !vehicle) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Vehicle not found</h1>
+          <button
+            className="inline-block rounded-md bg-primary px-4 py-2 text-white"
+            onClick={() => router.push("/inventory")}
+          >
+            Back to inventory
+          </button>
+        </div>
+      </div>
+    );
   }
 
   const relatedVehicles = getVehiclesByBrand(vehicle.brand)
     .filter((v) => v.id !== vehicle.id)
     .slice(0, 3);
 
+  // Convert any StaticImageData to a serializable string (safe for client usage)
+  const toSerializable = (v: typeof vehicle) => ({
+    ...v,
+    image:
+      typeof v.image === "object" && v.image !== null
+        ? (v.image as any).src ?? ""
+        : v.image,
+  });
+
+  const serializableVehicle = toSerializable(vehicle);
+  const serializableRelatedVehicles = relatedVehicles.map((v) =>
+    toSerializable(v)
+  );
+
   return (
-    <VehicleDetailClient vehicle={vehicle} relatedVehicles={relatedVehicles} />
+    <VehicleDetailClient
+      vehicle={serializableVehicle}
+      relatedVehicles={serializableRelatedVehicles}
+    />
   );
 }

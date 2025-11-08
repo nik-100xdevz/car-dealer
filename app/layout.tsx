@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+"use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -14,11 +14,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Dreams Motors - Commercial Vehicle Dealer in Mumbai",
-  description: " Your trusted dealer for Eicher, Tata, and Mahindra commercial vehicles in Mumbai. Explore our inventory and find the perfect vehicle for your business needs.",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,9 +24,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
