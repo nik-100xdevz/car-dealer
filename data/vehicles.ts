@@ -1,0 +1,315 @@
+import eicherPro1 from "@/assets/inventory/eicher-pro-1.jpg";
+import eicherPro2 from "@/assets/inventory/eicher-pro-2.jpg";
+import tataAce from "@/assets/inventory/tata-ace.jpg";
+import tataIntra from "@/assets/inventory/tata-intra.jpg";
+import marutiSuperCarry from "@/assets/inventory/maruti-super-carry.jpg";
+import mahindraMaxx from "@/assets/inventory/mahindra-maxx.jpg";
+import mahindraVeero from "@/assets/inventory/mahindra-veero.jpg";
+import mahindraBolero from "@/assets/inventory/mahindra-bolero.jpg";
+import mahindraSupro from "@/assets/inventory/mahindra-supro.jpg";
+import { StaticImageData } from "next/image";
+
+export interface Vehicle {
+  id: string;
+  name: string;
+  brand: "Eicher" | "Tata" | "Mahindra";
+  brandColor: string;
+  image: string | StaticImageData;
+  payload?: string;
+  fuelType?: string;
+  transmission?: string;
+  engine?: string;
+  description: string;
+}
+
+export const vehicles: Vehicle[] = [
+  // Eicher Models
+  {
+    id: "eicher-pro-2059xp",
+    name: "Eicher Pro 2059xp",
+    brand: "Eicher",
+    brandColor: "eicher",
+    image: eicherPro1,
+    payload: "2.6 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "3.3L Turbocharged",
+    description: "Powerful and reliable commercial vehicle built for heavy-duty operations with superior fuel efficiency and durability.",
+  },
+  {
+    id: "eicher-pro-2095xp",
+    name: "Eicher Pro 2095xp",
+    brand: "Eicher",
+    brandColor: "eicher",
+    image: eicherPro2,
+    payload: "3.2 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "3.8L Turbocharged",
+    description: "Heavy-duty truck designed for maximum payload capacity and excellent performance on Indian roads.",
+  },
+  {
+    id: "eicher-pro-2110xp",
+    name: "Eicher Pro 2110xp",
+    brand: "Eicher",
+    brandColor: "eicher",
+    image: eicherPro1,
+    payload: "3.5 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "4.0L Turbocharged",
+    description: "Premium commercial vehicle offering exceptional power, reliability, and low operating costs.",
+  },
+  {
+    id: "eicher-pro-2114xp",
+    name: "Eicher Pro 2114xp",
+    brand: "Eicher",
+    brandColor: "eicher",
+    image: eicherPro2,
+    payload: "4.0 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "4.2L Turbocharged",
+    description: "Top-tier commercial truck with maximum payload capacity and superior build quality for demanding business needs.",
+  },
+  
+  // Tata Models
+  {
+    id: "tata-ace-gold-diesel",
+    name: "Tata Ace Gold Diesel",
+    brand: "Tata",
+    brandColor: "tata",
+    image: tataAce,
+    payload: "0.7 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "0.7L Diesel",
+    description: "India's favorite mini truck with excellent mileage and compact design perfect for city logistics.",
+  },
+  {
+    id: "tata-ace-cng-petrol",
+    name: "Tata Ace CNG + Petrol",
+    brand: "Tata",
+    brandColor: "tata",
+    image: tataAce,
+    payload: "0.7 Ton",
+    fuelType: "CNG + Petrol",
+    transmission: "Manual",
+    engine: "0.7L Dual Fuel",
+    description: "Eco-friendly dual-fuel mini truck offering low operating costs with CNG option for urban deliveries.",
+  },
+  {
+    id: "tata-gold-ht-plus",
+    name: "Tata Gold HT Plus",
+    brand: "Tata",
+    brandColor: "tata",
+    image: tataAce,
+    payload: "0.9 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "0.8L Diesel",
+    description: "Enhanced version with higher payload capacity and improved comfort for small business owners.",
+  },
+  {
+    id: "tata-intra-v10",
+    name: "Tata Intra V10",
+    brand: "Tata",
+    brandColor: "tata",
+    image: tataIntra,
+    payload: "1.0 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "0.9L Diesel",
+    description: "Compact and efficient cargo vehicle ideal for intra-city transportation with excellent fuel economy.",
+  },
+  {
+    id: "tata-intra-v30",
+    name: "Tata Intra V30",
+    brand: "Tata",
+    brandColor: "tata",
+    image: tataIntra,
+    payload: "1.2 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "1.0L Diesel",
+    description: "Versatile commercial vehicle with superior load capacity and proven reliability for diverse business needs.",
+  },
+  {
+    id: "tata-intra-v50",
+    name: "Tata Intra V50",
+    brand: "Tata",
+    brandColor: "tata",
+    image: tataIntra,
+    payload: "1.5 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "1.2L Diesel",
+    description: "Mid-range cargo truck offering perfect balance of payload capacity and maneuverability.",
+  },
+  {
+    id: "tata-intra-v70",
+    name: "Tata Intra V70",
+    brand: "Tata",
+    brandColor: "tata",
+    image: tataIntra,
+    payload: "1.7 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "1.4L Diesel",
+    description: "High-capacity commercial vehicle designed for heavy-duty city and highway operations.",
+  },
+  {
+    id: "tata-intra-gold",
+    name: "Tata Intra Gold",
+    brand: "Tata",
+    brandColor: "tata",
+    image: tataIntra,
+    payload: "1.2 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "1.0L Diesel",
+    description: "Premium variant offering enhanced features and comfort for professional transport operations.",
+  },
+  {
+    id: "maruti-super-carry",
+    name: "Maruti Super Carry",
+    brand: "Tata",
+    brandColor: "tata",
+    image: marutiSuperCarry,
+    payload: "0.74 Ton",
+    fuelType: "Petrol/CNG",
+    transmission: "Manual",
+    engine: "1.2L Petrol",
+    description: "Compact and efficient mini truck with excellent fuel economy perfect for small business deliveries.",
+  },
+  
+  // Mahindra Models
+  {
+    id: "maxx-city-1-3",
+    name: "Maxx City 1.3",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraMaxx,
+    payload: "1.3 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "2.5L Diesel",
+    description: "Compact city truck with excellent maneuverability and low maintenance costs for urban logistics.",
+  },
+  {
+    id: "maxx-city-1-5",
+    name: "Maxx City 1.5",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraMaxx,
+    payload: "1.5 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "2.5L Diesel",
+    description: "Enhanced city truck offering higher payload with proven reliability and fuel efficiency.",
+  },
+  {
+    id: "maxx-hd-1-7",
+    name: "Maxx HD 1.7",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraMaxx,
+    payload: "1.7 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "2.5L Diesel",
+    description: "Heavy-duty variant designed for rigorous operations with superior build quality.",
+  },
+  {
+    id: "maxx-hd-2-0",
+    name: "Maxx HD 2.0",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraMaxx,
+    payload: "2.0 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "2.5L Diesel",
+    description: "Maximum payload capacity truck built for demanding business requirements and long-term reliability.",
+  },
+  {
+    id: "mahindra-veero-v2-cng-petrol",
+    name: "Mahindra Veero V2 CNG + Petrol",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraVeero,
+    payload: "0.9 Ton",
+    fuelType: "CNG + Petrol",
+    transmission: "Manual",
+    engine: "0.9L Dual Fuel",
+    description: "Eco-friendly compact truck with dual-fuel option offering low running costs and zero compromise on performance.",
+  },
+  {
+    id: "mahindra-veero-v4-cng-petrol",
+    name: "Mahindra Veero V4 CNG + Petrol",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraVeero,
+    payload: "1.0 Ton",
+    fuelType: "CNG + Petrol",
+    transmission: "Manual",
+    engine: "1.0L Dual Fuel",
+    description: "Advanced dual-fuel technology with higher payload capacity for cost-effective urban transportation.",
+  },
+  {
+    id: "mahindra-veero-diesel",
+    name: "Mahindra Veero V2, V4, V6 Diesel",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraVeero,
+    payload: "1.2 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "1.0L Diesel",
+    description: "Versatile diesel range offering multiple payload options with proven engine reliability.",
+  },
+  {
+    id: "mahindra-supro-diesel-cng",
+    name: "Mahindra Supro - Diesel + CNG",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraSupro,
+    payload: "0.9 Ton",
+    fuelType: "Diesel/CNG",
+    transmission: "Manual",
+    engine: "0.9L Dual Fuel",
+    description: "Multi-utility commercial vehicle with flexible fuel options ideal for passenger and cargo transport.",
+  },
+  {
+    id: "mahindra-bolero-camper",
+    name: "Mahindra Bolero Camper",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraBolero,
+    payload: "1.0 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "2.5L Diesel",
+    description: "Rugged passenger-cargo vehicle perfect for group transportation and business operations.",
+  },
+  {
+    id: "bolero-pickup",
+    name: "Bolero Pickup",
+    brand: "Mahindra",
+    brandColor: "mahindra",
+    image: mahindraBolero,
+    payload: "1.25 Ton",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    engine: "2.5L Diesel",
+    description: "Tough and reliable pickup truck built for Indian roads with exceptional durability and performance.",
+  },
+];
+
+export const getVehicleById = (id: string): Vehicle | undefined => {
+  return vehicles.find((vehicle) => vehicle.id === id);
+};
+
+export const getVehiclesByBrand = (brand: "Eicher" | "Tata" | "Mahindra"): Vehicle[] => {
+  return vehicles.filter((vehicle) => vehicle.brand === brand);
+};
